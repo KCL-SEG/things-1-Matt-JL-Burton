@@ -10,8 +10,8 @@ class Thing(AbstractUser):
 
     name = models.CharField(max_length=31, unique=True, blank=False)
     username = models.CharField(max_length=30, unique=True, blank=False)
-    description=models.CharField(unique=False, blank=True,max_length=121)
-    quantity = models.IntegerField(unique=False, blank=False, validators=[validate_quantity_range])
+    description=models.CharField(unique=False, blank=True,max_length=121, name='description')
+    quantity = models.IntegerField(unique=False, blank=False, validators=[validate_quantity_range],name='quantity')
     password = models.CharField(unique=True, blank=False, max_length=30)
 
 
