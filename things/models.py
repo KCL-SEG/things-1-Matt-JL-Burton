@@ -8,9 +8,9 @@ class Thing(AbstractUser):
         if value <= 0 or value >= 100:
             raise ValidationError('Quantity must be between 0 and 100.')
 
-    name = models.CharField(max_length=31, unique=True, blank=False)
+    name = models.CharField(max_length=30, unique=True, blank=False)
     username = models.CharField(max_length=30, unique=True, blank=False)
-    description=models.CharField(unique=False, blank=True,max_length=121, name='description')
+    description=models.CharField(unique=False, blank=True,max_length=120, name='description')
     quantity = models.IntegerField(unique=False, blank=False, validators=[validate_quantity_range],name='quantity')
     password = models.CharField(unique=True, blank=False, max_length=30)
 
